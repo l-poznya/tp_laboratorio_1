@@ -1,0 +1,53 @@
+/*
+ ============================================================================
+ Name        : TP_2.c
+ Author      : 
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "UTNBibliotecaTomaDeDatos.h"
+#include "bibliotecaArrayPassenger.h"
+
+int main(void) {
+   int opcionMenu;
+   int validacionRetorno;
+
+   validacionRetorno=utn_getNumero(&opcionMenu,"----","Ingreso un numero invalido",4,1,3);
+  	   if(validacionRetorno==0){
+  			  switch(opcionMenu){
+  			  case 1:
+  				  /*ALTAS
+  				   * ingresar un pasajero calculando automaticamente el id,
+  				   * el resto de campos se le pide al usuario*/
+  				  break;
+  			  case 2:
+  				  /*MODIFICAR
+  				   * Se ingresa el numero por id, un submenu para permitir modificar
+  				   * nombre, o apellido o precio o tipo de pasajero o cosigo de vuelo
+  				   *
+  				   *
+  				   * */
+  				  break;  //baja y modificarmisma estructura
+  			  case 3:
+  				  /* BAJA
+  				   * Se ingresa el numero de id y se hace una baja logica
+  				   * poner mensaje de verificacion antes de la eliminacion
+  				   *  */
+  				  break;
+  			  case 4:
+  				  /*
+  				   * 1. Listado de los pasajeros ordenados alfabéticamente por Apellido
+                     y Tipo de pasajero.
+                    2. Total y promedio de los precios de los pasajes, y cuántos pasajeros
+                     superan el precio promedio.
+                    3. Listado de los pasajeros por Código de vuelo y
+                    estados de vuelos ‘ACTIVO’*/
+  				  break;
+
+  			  }//cierre switch menu
+  			  }//cierre if validacion retorno
+
+	return EXIT_SUCCESS;
+}

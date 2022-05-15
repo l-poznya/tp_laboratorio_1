@@ -1,0 +1,23 @@
+09:39:21 **** Incremental Build of configuration Debug for project xx ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\xx.o" "..\\src\\xx.c" 
+..\src\xx.c: In function 'utn_getString':
+..\src\xx.c:29:27: warning: the comparison will always evaluate as 'false' for the address of 'tomarDato' will never be NULL [-Waddress]
+   29 |             if (tomarDato ==0 && esUnArrayDeChar == 0){
+      |                           ^~
+..\src\xx.c:29:50: warning: the comparison will always evaluate as 'false' for the address of 'esUnArrayDeChar' will never be NULL [-Waddress]
+   29 |             if (tomarDato ==0 && esUnArrayDeChar == 0){
+      |                                                  ^~
+..\src\xx.c: In function 'tomarDato':
+..\src\xx.c:54:22: warning: passing argument 1 of 'esUnArrayDeChar' from incompatible pointer type [-Wincompatible-pointer-types]
+   54 |   if(esUnArrayDeChar(&cadena, longitud)){
+      |                      ^~~~~~~
+      |                      |
+      |                      char **
+..\src\xx.c:5:29: note: expected 'char *' but argument is of type 'char **'
+    5 |  int esUnArrayDeChar(char * cadena, int longitud);
+      |                      ~~~~~~~^~~~~~
+gcc -o xx.exe "src\\xx.o" 
+
+09:39:22 Build Finished. 0 errors, 3 warnings. (took 583ms)
+

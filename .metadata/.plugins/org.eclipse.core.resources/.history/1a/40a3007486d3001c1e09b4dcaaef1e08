@@ -1,0 +1,20 @@
+/*
+ * UTNBibliotecaTomaDeDatos.h
+ *
+ *  Created on: 13 may 2022
+ *      Author: ludmi
+ */
+
+#ifndef UTNBIBLIOTECATOMADEDATOS_H_
+#define UTNBIBLIOTECATOMADEDATOS_H_
+
+
+
+#endif /* UTNBIBLIOTECATOMADEDATOS_H_ */
+
+
+int utn_getCaracter(char * pResultado, char* mensaje, char * mensajeError, char minimo, char maximo, int reintentos);
+int utn_getNumero(int * pNumeroIngresado,char * mensaje,char * mensajeError,
+		int maximo, int minimo, int maximoDeReintentos);
+int myGets(char* cadena, int longitud);
+int utn_getNumeroFlotante(float* pResultado, char* mensaje, char* mensajeError, float minimo, float maximo, int reintentos);

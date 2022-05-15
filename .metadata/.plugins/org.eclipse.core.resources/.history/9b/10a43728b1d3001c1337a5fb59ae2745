@@ -1,0 +1,105 @@
+/*
+ ============================================================================
+ Name        : TP_2.c
+ Author      : 
+ ============================================================================
+ */
+#define CANTIDAD_PASAJEROS 2000
+#include <stdio.h>
+#include <stdlib.h>
+#include "UTNBibliotecaTomaDeDatos.h"
+#include "bibliotecaArrayPassenger.h"
+
+int main(void) {
+	setbuf(stdout, NULL);
+   Passenger arrayPasajeros [CANTIDAD_PASAJEROS];
+   int opcionMenu;
+   int validacionRetorno;
+   int bufferIndice;
+
+
+     do {
+    	 validacionRetorno=utn_getNumero(&opcionMenu,
+						 "\t\t\t\t\t MENU \t\t\t\t\t \n\n "
+						 "\t 1. ALTAS - Cargar datos de pasajeros\n"
+						 "\t 2. MODIFICAR - Modificar un dato ya ingresado \n"
+						 "\t 3. BAJA - Dar de baja  \n"
+						 "\t 4.INFORMAR -  \n"
+						 "\t 5.CARGA FORZADA-\n\n"
+
+						 "\t 6. salir \n\n\n ",1,6,3);
+
+     if(validacionRetorno==0){
+  		  switch(opcionMenu){
+  			    case 1:
+
+
+  			    	bufferIndice = buscarIndexPorIsEmpty(arrayPasajeros, CANTIDAD_PASAJEROS);
+  			    	   if(bufferIndice>=0){
+  			    		   if(addPassenger(arrayPasajeros, CANTIDAD_PASAJEROS,id,name,price,typePassenger,flycode)==0){ }
+  			    	   }else {
+
+  			    	   }
+
+//  			               bufferIndice  = buscarIndexPorIsEmpty(arrayPasajeros, CANTIDAD_PASAJEROS);
+//  					if( bufferIndice>= 0) {
+//
+//  			           if(addPassenger(arrayPasajeros, CANTIDAD_PASAJEROS,id,name,price,typePassenger,flycode))==0){
+//
+//        //addPassenger(Passenger* list, int len, int id, char name[],char  lastName[],float price,int typePassenger, char flycode[])
+// 							printf("\nCarga realizada con exito\n");
+//  			           }else {
+//  			        	 printf("\nNO HAY MAS LUGAR");
+// 					       }
+//
+//
+					break;
+				//	r = addPassenger(arrayPassenger,ELEMENTS,id,name,lastName,price,typePassenger,flycode);
+//  	            if(cargarAsociado(asociados, LEN_ASOCIADOS)== 0)
+//  	            {
+//  	               printf("Ok\n");
+//  	            }else
+//  	            {
+//  	                printf("No ok\new");
+//  	            }
+//  	            listarAsociado(asociados, LEN_ASOCIADOS);
+//  	            break;
+  				  /*ALTAS
+  				   * ingresar un pasajero calculando automaticamente el id,
+  				   * el resto de campos se le pide al usuario*/
+
+  				  break;
+  			  case 2:
+
+  				  /*MODIFICAR
+  				   * Se ingresa el numero por id, un submenu para permitir modificar
+  				   * nombre, o apellido o precio o tipo de pasajero o cosigo de vuelo
+  				   *
+  				   *
+  				   * */
+  				  break;  //baja y modificarmisma estructura
+  			  case 3:
+  				  /* BAJA
+  				   * Se ingresa el numero de id y se hace una baja logica
+  				   * poner mensaje de verificacion antes de la eliminacion
+  				   *  */
+  				  break;
+  			  case 4:
+  				  /*
+  				   * 1. Listado de los pasajeros ordenados alfabéticamente por Apellido
+                     y Tipo de pasajero.
+                    2. Total y promedio de los precios de los pasajes, y cuántos pasajeros
+                     superan el precio promedio.
+                    3. Listado de los pasajeros por Código de vuelo y
+                    estados de vuelos ‘ACTIVO’*/
+  				  break;
+  			  case 5:
+  				  break;
+  			  case 6:
+  				  break;
+
+  			  }//cierre switch menu
+  			  }//cierre if validacion retorno
+                    }while(opcionMenu!= 6);
+	return EXIT_SUCCESS;
+}

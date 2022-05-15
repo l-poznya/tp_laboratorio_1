@@ -1,0 +1,22 @@
+06:12:41 **** Incremental Build of configuration Debug for project prueba ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\prueba.o" "..\\src\\prueba.c" 
+..\src\prueba.c: In function 'main':
+..\src\prueba.c:28:31: warning: passing argument 1 of 'utn_getCaracter' from incompatible pointer type [-Wincompatible-pointer-types]
+   28 |  validacion = utn_getCaracter(&nombre,"Ingrese nombre","ERROR",'A','Z',3);
+      |                               ^~~~~~~
+      |                               |
+      |                               char (*)[50]
+..\src\prueba.c:14:28: note: expected 'char *' but argument is of type 'char (*)[50]'
+   14 | int utn_getCaracter(char * pResultado, char* mensaje, char * mensajeError, char minimo, char maximo, int reintentos);
+      |                     ~~~~~~~^~~~~~~~~~
+..\src\prueba.c:30:29: warning: format '%c' expects argument of type 'int', but argument 2 has type 'char *' [-Wformat=]
+   30 |   printf("Nombre Ingresado %c" , nombre);
+      |                            ~^    ~~~~~~
+      |                             |    |
+      |                             int  char *
+      |                            %s
+gcc -o prueba.exe "src\\prueba.o" 
+
+06:12:42 Build Finished. 0 errors, 2 warnings. (took 570ms)
+

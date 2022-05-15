@@ -1,0 +1,88 @@
+/*
+ ============================================================================
+ Name        : xx.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int utn_getString(char * pResultado, char* mensaje, char * mensajeError, char minimo, char maximo, int reintentos);
+int getChar (int*pResultado);
+int esString(char cadena[]);
+
+
+int main(void) {
+	setbuf(stdout, NULL);
+    int a;
+    char nombre[50];
+
+    a = utn_getString(&nombre, "escribi nombre","error",0,50,2);
+    if(a==0){
+    	printf("tu nombre es %c ", nombre);
+    }
+
+
+}
+
+
+
+
+int utn_getString(char * pResultado, char* mensaje, char * mensajeError, char minimo, char maximo, int reintentos)
+{
+	int retorno;
+	char buffer;
+	retorno = -1;
+
+	if (pResultado !=NULL && mensaje !=NULL && mensajeError !=NULL && minimo <= maximo && reintentos >=0){
+
+		do {
+         printf("%s",mensaje);
+		scanf("%c",&buffer);
+		if( getChar(&buffer) == 0 && buffer >=minimo && buffer <=maximo){
+
+			 *pResultado = buffer;
+			 retorno = 0;
+
+
+		 }else {
+			 printf("%s", mensajeError);
+			 reintentos--;
+		 }
+		} while(reintentos >=0);
+
+	}//cierre if punteros
+
+
+    return  retorno;
+
+}
+
+
+
+
+
+
+ int esString(char cadena[])
+ {
+ 	int retorno=1;
+ 	int i=0;
+ 	if(cadena!=NULL)
+ 	{
+ 		while(cadena[i]!='\0')
+ 		{
+ 			if(cadena[i]<'A' || (cadena[i]>'Z' && cadena[i]<'a') || cadena[i]>'z')
+ 			{
+ 				retorno=0;
+ 				break;
+ 			}
+ 			i++;
+ 		}
+ 	}
+
+ 	return retorno;
+ }

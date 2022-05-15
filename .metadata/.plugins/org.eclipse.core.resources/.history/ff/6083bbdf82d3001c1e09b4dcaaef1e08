@@ -1,0 +1,84 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+ int esUnArrayDeChar(char * cadena, int longitud);
+ int utn_getString(char * charIngresado ,char * mensaje,char * mensajeError);
+ int tomarDato(char * cadena, int longitud);
+
+
+
+int main(void)
+{
+   int a ;
+
+   return EXIT_SUCCESS;
+}
+
+
+
+int utn_getString(char * charIngresado ,char * mensaje,char * mensajeError)
+		{
+
+	int retorno;
+	retorno = -1;
+
+	if(charIngresado != NULL && mensaje !=NULL && mensajeError != NULL){
+
+            printf("%s", mensaje);
+
+            if (tomarDato ==0 && esUnArrayDeChar == 0){
+            	retorno=0;
+            }
+
+	}else {
+		printf("%s",mensajeError);
+	}
+
+	return retorno;
+}
+
+
+
+
+
+int tomarDato(char * cadena, int longitud){
+	int retorno = -1;
+	int i;
+	char bufferString[4090];
+	if (cadena != NULL && longitud>0){
+		for (i=0;i<longitud;i++)
+		{
+		printf("Ingrese valor a cargar en el vector");
+		scanf("%c",&bufferString[i]);
+		}
+		if (esUnArrayDeChar(&cadena, longitud)){
+		retorno = 0;
+		}
+	}
+
+
+	return retorno;
+}
+
+
+
+ int esUnArrayDeChar(char * cadena, int longitud){
+	int i;
+	int retorno;
+
+	i=0;
+	retorno = -1;
+
+	if(cadena != NULL && longitud >0){
+		for(i=0; cadena[i]!= '\0' && i <longitud; i++){
+			if((cadena[i] < 'A' || cadena [i] > 'Z') && ((cadena[i] < 'a' || cadena [i] > 'z') )){
+
+				retorno = 0;
+				break;
+			}
+		}
+	}
+	return retorno;
+
+}

@@ -1,0 +1,76 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int utn_validateArrayChar(char *array);
+
+void main(void)
+{
+	int a;
+
+int nombre[60],i;
+for (i=0;i<60;i++)
+{
+	utn_validateArrayChar(&nombre[i]);
+}
+if ()
+}
+
+
+
+
+int cargar(char * array ){
+
+	char buffer;
+	int retorno ;
+	retorno = -1;
+
+	if ( array !=NULL){
+	int nombre[60],i;
+	for (i=0;i<60;i++){
+		scanf("%c",&nombre[i]);
+	}
+
+	if(utn_validateArrayChar == 0){
+		retorno = 0;
+	}
+	return retorno;
+}
+
+	static int esUnArrayDeChar(char * cadena, int longitud){
+		int i;
+		int retorno;
+
+		i=0;
+		retorno = -1;
+		if(cadena != NULL && longitud >0){
+			for(i=0; cadena[i]!= '\0' && i <longitud; i++){
+				if((cadena[i] < 'A' || cadena [i] > 'Z') && ((cadena[i] < 'a' || cadena [i] > 'z') )){
+
+					retorno = 0;
+					break;
+				}
+			}
+		}
+		return retorno;
+
+	}
+
+int utn_validateArrayChar(char *array){
+    int i;
+    int isArrayChar = 0;
+  if (array != NULL){
+      for (i = 0; i < strlen (array) - 1; i++){
+	  if ((array[i] >= 'A' && array[i] <= 'Z')
+	      || (array[i] >= 'a' && array[i] <= 'z')){
+		  isArrayChar = 0;
+	    }else{
+	      isArrayChar = -1;
+	      break;
+	   }
+
+	}
+  }
+    return isArrayChar;
+}

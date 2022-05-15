@@ -1,0 +1,22 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int utn_validateArrayChar(char *array){
+    int i;
+    int isArrayChar = 0;
+  if (array != NULL){
+      for (i = 0; i < strlen (array) - 1; i++){
+	  if ((array[i] >= 'A' && array[i] <= 'Z')
+	      || (array[i] >= 'a' && array[i] <= 'z')
+	      || (array[i] >= '0' && array[i] <= '9')){
+		  ArrayChar = 0;
+	    }else{
+	    	ArrayChar = -1;
+	      break;
+	    }
+
+	}
+  }
+    return ArrayChar;
+}

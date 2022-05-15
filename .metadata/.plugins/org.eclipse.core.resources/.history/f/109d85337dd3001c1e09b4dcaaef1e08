@@ -1,0 +1,67 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+ int esUnArrayDeChar(char * cadena, int longitud);
+ int getString(char* input,char message[],char eMessage[], int lowLimit, int hiLimit);
+
+
+int main(void)
+{
+   int a ;
+   char nombre[50],i;
+   a = getString(&nombre[i],"Ingrese su nombre", "error",8,8);
+   if(a==0){
+	   printf("Funciona");
+   }
+   return EXIT_SUCCESS;
+}
+
+
+int getString(char* input,char message[],char eMessage[], int lowLimit, int hiLimit)
+{
+	char buffer[4090],i;
+	int retorno;
+
+
+
+	retorno = -1;
+	if(input!= NULL && message !=NULL && eMessage !=NULL && lowLimit!=NULL && hiLimit!=NULL){
+
+		for (i=0;i<buffer;i++)
+			{
+			printf("%s", message);
+			scanf("%c",&buffer[i]);
+			}
+
+      retorno = 0;
+	} else {
+		printf("%s",eMessage);
+	}
+
+ return retorno;
+
+}
+
+
+
+
+
+ int esUnArrayDeChar(char * cadena, int longitud){
+	int i;
+	int retorno;
+
+	i=0;
+	retorno = -1;
+	if(cadena != NULL && longitud >0){
+		for(i=0; cadena[i]!= '\0' && i <longitud; i++){
+			if((cadena[i] < 'A' || cadena [i] > 'Z') && ((cadena[i] < 'a' || cadena [i] > 'z') )){
+
+				retorno = 0;
+				break;
+			}
+		}
+	}
+	return retorno;
+
+}

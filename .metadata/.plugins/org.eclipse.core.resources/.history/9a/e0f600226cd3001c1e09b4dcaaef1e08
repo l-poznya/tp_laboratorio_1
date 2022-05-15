@@ -1,0 +1,18 @@
+int utn_validateAlphanumericCharArray (char *array){
+    int i;
+    int isAlphanumeric = 0;
+  if (array != NULL){
+      for (i = 0; i < strlen (array) - 1; i++){
+	  if ((array[i] >= 'A' && array[i] <= 'Z')
+	      || (array[i] >= 'a' && array[i] <= 'z')
+	      || (array[i] >= '0' && array[i] <= '9')){
+	      isAlphanumeric = 0;
+	    }else{
+	      isAlphanumeric = -1;
+	      break;
+	    }
+
+	}
+  }
+    return isAlphanumeric;
+}

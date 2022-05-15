@@ -1,0 +1,31 @@
+22:50:00 **** Incremental Build of configuration Debug for project TP_2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\bibliotecaArrayPassenger.o" "..\\src\\bibliotecaArrayPassenger.c" 
+..\src\bibliotecaArrayPassenger.c: In function 'printPassenger':
+..\src\bibliotecaArrayPassenger.c:204:13: warning: format '%c' expects argument of type 'int', but argument 2 has type 'char *' [-Wformat=]
+  204 |    printf("%c %c %f %c %d %d %d",length.name,length.lastName,length.price,length.flycode,length.typePassenger,length.typePassenger );
+      |            ~^                    ~~~~~~~~~~~
+      |             |                          |
+      |             int                        char *
+      |            %s
+..\src\bibliotecaArrayPassenger.c:204:16: warning: format '%c' expects argument of type 'int', but argument 3 has type 'char *' [-Wformat=]
+  204 |    printf("%c %c %f %c %d %d %d",length.name,length.lastName,length.price,length.flycode,length.typePassenger,length.typePassenger );
+      |               ~^                             ~~~~~~~~~~~~~~~
+      |                |                                   |
+      |                int                                 char *
+      |               %s
+..\src\bibliotecaArrayPassenger.c:204:22: warning: format '%c' expects argument of type 'int', but argument 5 has type 'char *' [-Wformat=]
+  204 |    printf("%c %c %f %c %d %d %d",length.name,length.lastName,length.price,length.flycode,length.typePassenger,length.typePassenger );
+      |                     ~^                                                    ~~~~~~~~~~~~~~
+      |                      |                                                          |
+      |                      int                                                        char *
+      |                     %s
+..\src\bibliotecaArrayPassenger.c:204:31: warning: format '%d' expects a matching 'int' argument [-Wformat=]
+  204 |    printf("%c %c %f %c %d %d %d",length.name,length.lastName,length.price,length.flycode,length.typePassenger,length.typePassenger );
+      |                              ~^
+      |                               |
+      |                               int
+gcc -o TP_2.exe "src\\TP_2.o" "src\\UTNBilbiotecaTomaDeDatos.o" "src\\bibliotecaArrayPassenger.o" 
+
+22:50:00 Build Finished. 0 errors, 4 warnings. (took 595ms)
+
